@@ -220,7 +220,13 @@ class PlayerStat < ActiveRecord::Base
 
   #Method to pull news articles for player from ESPN and Fox if they are available (will not show if player doesnt have)
   def self.player_news(player_name)
-      url = "https://newsapi.org/v2/everything?sources=espn,fox-sports&q=#{player_name[:first_name]}-#{player_name[:last_name]}&apiKey=REMOVED_HISTORICAL_CREDENTIAL"
+    news_api_key = ENV['NEWS_API_KEY']
+    if news_api_key.nil? || news_api_key.strip.empty?
+      puts "News lookup is not configured. Set NEWS_API_KEY to enable it."
+      return
+    end
+
+    url = "https://newsapi.org/v2/everything?sources=espn,fox-sports&q=#{player_name[:first_name]}-#{player_name[:last_name]}&apiKey=#{news_api_key}"
 
     req = open(url)
     response_body = req.read

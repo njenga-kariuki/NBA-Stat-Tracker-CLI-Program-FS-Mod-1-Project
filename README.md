@@ -1,7 +1,11 @@
 # NBA Stat Tracker
 
+A Ruby command-line application for following NBA players, combining game and team statistics, player favorites, and news in one place.
+
+**2019 team capstone.** Preserved from the original Flatiron School implementation. The included GIF records the application at the time; its dependencies and external APIs have not been revalidated against current services. The statistics queries target the 2018 season.
+
 #### Njenga Kariuki and Matthew Shin
-###### Project completed as part of [Flatiron School](https://flatironschool.comcampuses/seattle/) module 1 curriculum.
+###### Project completed as part of [Flatiron School](https://flatironschool.com/campuses/seattle/) module 1 curriculum.
 
 ![gif of video](keep_gif.gif)
 
@@ -17,10 +21,14 @@ If users do not want to create an account, they can still search players and vie
 #### 3. What is the customer problem we are solving?
 Eliminating the need to juggle between stat and news sites/apps to stay updated on your favorite NBA players.
 
-## Installation Instructions
+## Original setup
+
+News lookup requires your own NewsAPI credential in the `NEWS_API_KEY` environment variable. The source does not include a credential. Set it in your local shell before running the CLI; do not commit it.
+
+The steps below document the original environment, rather than a verified setup for current API versions.
 #### OSX/Linux
 ```
-1. Fork the repository: https://github.com/njenga-kariuki/module-one-final-project-guidelines-seattle-web-career-021819
+1. Fork the repository: https://github.com/njenga-kariuki/NBA-Stat-Tracker-CLI-Program-FS-Mod-1-Project
 2. Clone the repository into a file in your terminal
 3. Run 'bundle install' to install required gems
 4. Enter 'rake db:migrate' to create database
